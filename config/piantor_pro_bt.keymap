@@ -16,30 +16,48 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_alt_tab {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB  |  B  |  L  |  D  |  C  |  V  |  J  |  Y  |  O  |  U  |  ,  | BSPC |
+            // | LCTRL |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL  |
+            // | LSHFT |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  "  |  ;  |  .  | ESC  |
+            //                     |to 0 | to 1|SPACE| RET | to 2| to 3|
+
             display-name = "GALLIUM";
             bindings = <
                 &kp TAB   &kp B &kp L &kp D &kp C &kp V &kp J &kp Y  &kp O     &kp U    &kp COMMA   &kp BSPC
-                &kp LCTRL &kp N &kp R &kp T &kp S &kp G &kp P &kp H  &kp A     &kp E    &kp I       &kp SQT
+                &kp LCTRL &kp N &kp R &kp T &kp S &kp G &kp P &kp H  &kp A     &kp E    &kp I       &kp DEL
                 &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z &kp K &kp F  &kp DQT   &kp SEMI &kp DOT     &kp ESC
-                               &mo 1 &mo 2 &kp SPACE &kp RET &mo 3 &mo 4
+                               &to 0 &to 1 &kp SPACE &kp RET &to 2 &to 3
             >;
         };
 
         layer_1 {
-            display-name = "NUMBER";
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5    |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT | BTCR| RGB | RST | BOOT| Unlock|     |     |     |     |     |      |
-            //                    | GUI |     | SPC   | ENT |     | ALT |
+            // |      |  1  |  2  |  3  |  4  |  5    |  6  |  7  |  8  |  9  |  0  |      |
+            // |      | BT1 | BT2 | BT3 | BT4 | BT5   | LFT | DWN |  UP | RGT |     |      |
+            // |      | BTCR|     | RST | BOOT| Unlock|     |     |     |     |     |      |
+            //                    |     |     |       |     |     |     |
+            display-name = "NUMBER";
             bindings = <
-                &trans   &kp N1       &kp N2          &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &trans
+                &trans   &kp N1       &kp N2          &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9   &kp N0 &trans
                 &trans &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &trans &bt BT_CLR   &rgb_ug RGB_TOG &sys_reset   &bootloader  &studio_unlock &trans   &trans   &trans &trans    &trans &trans
+                &trans &bt BT_CLR   &trans          &sys_reset   &bootloader  &studio_unlock &trans   &trans   &trans &trans    &trans &trans
                                        &trans  &trans  &trans  &trans  &trans   &trans
             >;
         };
@@ -47,80 +65,45 @@
         layer_2 {
             display-name = "SYMBOL";
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC | ENT |     | ALT |
+            // |      |  !  |  @  |  #  |  $   |  %   |  ^  |  &  |  *  |  (  |  )  |     |
+            // |      |     |     |     |  '"  |  `   |  -  |  =  |  [  |  ]  |  \  |     |
+            // |      |     |     |     |      |  ~   |  _  |  +  |  {  |  }  | "|" |     |
+            //                    |     |      |      |     |     |     |
             bindings = <
-                &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT  &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &trans
-                &trans &trans   &trans &trans   &trans   &trans     &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE
-                &trans &trans   &trans &trans   &trans   &trans     &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE &kp TILDE
+                &trans  &kp EXCL &kp AT &kp HASH &kp DLLR  &kp PRCNT  &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
+                &trans  &trans   &trans &trans   &kp SQT    &kp GRAVE  &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &trans
+                &trans  &trans   &trans &trans   &trans    &kp TILDE  &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &trans
                                      &trans  &trans  &trans  &trans  &trans   &trans
             >;
         };
 
         layer_3 {
-            display-name = "EXTRA 1";
+            // -----------------------------------------------------------------------------------------
+            // |      |     |     |     |     |      |      |       |       |     |     |           |
+            // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
+            // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
+            //                    |     |     |      |      |       |       |
+            display-name = "FN";
             bindings = <
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans  &trans &trans &trans       
+                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &trans
+                &trans &trans &trans &trans &kp LALT kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
+                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &to 4
+                                     &trans &trans   &trans   &trans    &trans    &trans
             >;
         };
 
         layer_4 {
-            display-name = "EXTRA 2";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans  &trans &trans &trans       
-            >;
-        };
-
-        layer_5 {
-            display-name = "EXTRA 3";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans  &trans &trans &trans       
-            >;
-        };
-
-        layer_6 {
-            display-name = "EXTRA 4";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans  &trans &trans &trans       
-            >;
-        };
-
-        layer_7 {
-            display-name = "EXTRA 5";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans  &trans &trans &trans       
-            >;
-        };
-
-        layer_8 {
             display-name = "QWERTY";
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC | ENT | RSE  | ALT |
+            //                    | GUI | LALT | SPC | RET | RALT  | to 3 |
             bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-                &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                               &kp LGUI &mo 1 &kp SPACE &kp RET &mo 2 &kp RALT
+                &trans   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I     &kp O   &kp P  &trans
+                &trans &kp A &kp S &kp D &kp F &kp G &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
+                &trans &kp Z &kp X &kp C &kp V &kp B &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &trans
+                                 &kp LGUI &kp LALT &kp SPACE &kp RET &kp RALT &to 3
             >;
         };
     };
