@@ -11,7 +11,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &layer_0;
+        zmk,physical-layout = &default_layer;
     };
 };
 
@@ -19,7 +19,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        default_layer {
             display-name = "GALLIUM";
             bindings = <
                 &kp TAB   &kp B &kp L &kp D &kp C &kp V &kp J &kp Y  &kp O     &kp U    &kp COMMA   &kp BSPC
