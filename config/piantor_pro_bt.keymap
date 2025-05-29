@@ -74,7 +74,7 @@
             display-name = "FN";
             bindings = <
                 &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &trans
-                &trans &trans &trans &trans &kp LALT kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
+                &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
                 &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &to 4
                                      &trans &trans   &trans   &trans    &trans    &trans
             >;
