@@ -52,7 +52,7 @@
         layer_2 {
                 // -----------------------------------------------------------------------------------------
                 // |      |         |        |      |      | GALLIUM | QWERTY |       |       |     |     |    |
-                // |      |         |        | PRNT | LALT | LGUI    | HOME   | PG_DN | PG_UP | END | INS |    |
+                // |      |         |        | PRNT | LALT | LGUI    | POS1   | PG_DN | PG_UP | END | INS |    |
                 // |      |         |        |      |      |         |        |       |       |     |     |    |
                 //                           |      |      |         |        |       |       |
                 display-name = "FN";
