@@ -50,18 +50,18 @@
         };
 
         layer_2 {
-                // -----------------------------------------------------------------------------------------
-                // |      |         |        |      |      | GALLIUM | QWERTY |       |       |     |     |    |
-                // |      |         |        | PRNT | LALT | LGUI    | POS1   | PG_DN | PG_UP | END | INS |    |
-                // |      |         |        |      |      |         |        |       |       |     |     |    |
-                //                           |      |      |         |        |       |       |
-                display-name = "FN";
-                bindings = <
-                    &trans &trans &trans &trans          &trans   &to 0     &to 1      &trans    &trans    &trans  &trans &trans
-                    &trans &trans &trans &kp PRINTSCREEN &kp LALT &kp LGUI  &kp HOME   &kp PG_DN &kp PG_UP &kp END &kp INS &trans
-                    &trans &trans &trans &trans          &trans   &trans    &trans     &trans    &trans    &trans  &trans &trans
-                                         &trans          &trans   &trans    &trans     &trans
-                >;
+            // -----------------------------------------------------------------------------------------
+            // |      |         |        |      |      | GALLIUM | QWERTY |       |       |     |     |    |
+            // |      |         |        | PRNT | LALT | LGUI    | POS1   | PG_DN | PG_UP | END | INS |    |
+            // |      |         |        |      |      |         |        |       |       |     |     |    |
+            //                           |      |      |         |        |       |       |
+            display-name = "FN";
+            bindings = <
+                &trans &trans &trans &trans          &trans   &to 0     &to 1      &trans    &trans    &trans  &trans &trans
+                &trans &trans &trans &kp PRINTSCREEN &kp LALT &kp LGUI  &kp HOME   &kp PG_DN &kp PG_UP &kp END &kp INS &trans
+                &trans &trans &trans &trans          &trans   &trans    &trans     &trans    &trans    &trans  &trans &trans
+                                     &trans          &trans   &trans    &trans     &trans
+            >;
 
 
 pppp     bbbababbab1112234543240066777899c
