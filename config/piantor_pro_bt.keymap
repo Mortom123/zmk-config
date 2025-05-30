@@ -24,17 +24,32 @@
             // |  TAB  |  B  |  L  |  D  |  C  |  V  |  J  |  Y  |  O  |  U  |  ,  | BSPC |
             // | LCTRL |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL  |
             // | LSHFT |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  '  |  ;  |  .  | ESC  |
-            //                     |to 0 | mo 1|SPACE| RET | mo 2| to 3|
+            //                     | GAL | NUM |SPACE| RET | SYM | FN  |
             display-name = "GALLIUM";
             bindings = <
                 &kp TAB   &kp B &kp L &kp D &kp C &kp V &kp J &kp Y  &kp O     &kp U    &kp COMMA   &kp BSPC
                 &kp LCTRL &kp N &kp R &kp T &kp S &kp G &kp P &kp H  &kp A     &kp E    &kp I       &kp DEL
                 &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z &kp K &kp F  &kp SQT   &kp SEMI &kp DOT     &kp ESC
-                               &to 0 &mo 1 &kp SPACE &kp RET &mo 2 &to 3
+                                &to 0 &mo 2 &kp SPACE &kp RET &mo 3  &mo 1
             >;
         };
 
         layer_1 {
+                // -----------------------------------------------------------------------------------------
+                // |      |     |     |     |     |      |      |       |       |     |     |           |
+                // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
+                // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
+                //                    |     |     |      |      |       |       |
+                display-name = "FN";
+                bindings = <
+                    &trans &trans &trans &trans &trans   &trans    &trans     &trans    &trans    &trans  &trans  &trans
+                    &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME   &kp PG_DN &kp PG_UP &kp END &kp INS &trans
+                    &trans &trans &trans &trans &trans   &trans    &trans     &trans    &trans    &trans  &trans  &to 4
+                                         &trans &trans   &trans    &trans     &trans
+                >;
+            };
+
+        layer_2 {
             // -----------------------------------------------------------------------------------------
             // |      |  1  |  2  |  3  |  4  |  5    |  6  |  7  |  8  |  9  |  0  |      |
             // |      | BT1 | BT2 | BT3 | BT4 | BT5   | LFT | DWN |  UP | RGT |     |      |
@@ -49,38 +64,21 @@
             >;
         };
 
-        layer_2 {
-            // -----------------------------------------------------------------------------------------
-            // |      |  !  |  @  |  #  |  $   |  %   |  ^  |  &  |  *  |  (  |  )  |     |
-            // |      |     |     |     |  '"  |  `   |  -  |  =  |  [  |  ]  |  \  |     |
-            // |      |     |     |     |      |  ~   |  _  |  +  |  {  |  }  | "|" |     |
-            //                    |     |      |      |     |     |     |
-            display-name = "SYMBOL";
-            bindings = <
-                &trans  &kp EXCL &kp AT &kp HASH &kp DLLR  &kp PRCNT  &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
-                &trans  &trans   &trans &trans   &kp SQT    &kp GRAVE  &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &trans
-                &trans  &trans   &trans &trans   &trans    &kp TILDE  &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &trans
-                                     &trans  &trans  &trans  &trans  &trans   &trans
-            >;
-        };
-
-
         layer_3 {
             // -----------------------------------------------------------------------------------------
-            // |      |     |     |     |     |      |      |       |       |     |     |           |
-            // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
-            // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
-            //                    |     |     |      |      |       |       |
-            display-name = "FN";
+            // |      |  !  |  @  |  #  |  $   |  %   |  ^  |  &  |  *  |  `  |  ~  |     |
+            // |      |     |  {  |  }  |  (   |  )   |  [  |  ]  |  /  |  \  |     |     |
+            // |      |     |     |     |  =   |  +   |  -  |  _  | "|" |     |     |     |
+            //                    |     |      |      |     |     |     |
+
+            display-name = "SYMBOL";
             bindings = <
-                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &trans
-                &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
-                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &to 4
-                                     &trans &trans   &trans   &trans    &trans
+                &trans  &kp EXCL &kp AT     &kp HASH &kp DLLR  &kp PRCNT  &kp CARET &kp AMPS   &kp ASTRK &kp GRAVE &kp TILDE &trans
+                &trans  &trans   &kp LBRC   &kp RBRC &kp LPAR  &kp RPAR   &kp LBKT  &kp RBKT   &kp FSLH  &kp BSLH  &trans    &trans
+                &trans  &trans   &trans     &trans   &kp EQUAL &kp PLUS   &kp MINUS &kp UNDER  &kp PIPE  &trans    &trans    &trans
+                                            &trans   &trans    &trans     &trans  &trans   &trans
             >;
         };
-
-
 
         layer_4 {
             display-name = "QWERTY";
