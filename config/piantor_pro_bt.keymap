@@ -51,16 +51,16 @@
 
         layer_2 {
                 // -----------------------------------------------------------------------------------------
-                // |      |     |     |     |     |      |      |       |       |     |     |           |
-                // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
-                // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
-                //                    |     |     |      |      |       |       |
+                // |      |     |     |      |     |      |      |       |       |     |     |           |
+                // |      |     |     | PRNT | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
+                // |      |     |     |      |     |      |      |       |       |     |     | to 4      |
+                //                    |      |     |      |      |       |       |
                 display-name = "FN";
                 bindings = <
-                    &trans &trans &trans &trans &trans   &trans    &trans     &trans    &trans    &trans  &trans  &trans
-                    &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME   &kp PG_DN &kp PG_UP &kp END &kp INS &trans
-                    &trans &trans &trans &trans &trans   &trans    &trans     &trans    &trans    &trans  &trans  &to 1
-                                         &trans &trans   &trans    &trans     &trans
+                    &trans &trans &trans &trans          &trans   &trans    &trans     &trans    &trans    &trans  &trans  &trans
+                    &trans &trans &trans &kp PRINTSCREEN &kp LALT &kp LGUI  &kp HOME   &kp PG_DN &kp PG_UP &kp END &kp INS &trans
+                    &trans &trans &trans &trans          &trans   &trans    &trans     &trans    &trans    &trans  &trans  &to 1
+                                         &trans          &trans   &trans    &trans     &trans
                 >;
             };
 
