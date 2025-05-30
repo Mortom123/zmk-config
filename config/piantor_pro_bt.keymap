@@ -9,11 +9,20 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
 / {
     chosen {
         zmk,physical-layout = &default_layout;
     };
 };
+
 
 / {
     keymap {
@@ -21,15 +30,15 @@
 
         layer_0 {
             // -----------------------------------------------------------------------------------------
-            // |  TAB  |  B  |  L  |  D  |  C  |  V  |  J  |  Y  |  O  |  U  |  ,  | BSPC |
-            // | LCTRL |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL  |
-            // | LSHFT |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  '  |  ;  |  .  | ESC  |
+            // |  TAB  |  B  |  L  |  D  |  C  |  V  |  J  |  Y  |  O  |  U  |  ,  | BSPC     |
+            // | LCTRL |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL      |
+            // | LSHFT |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  '  |  ;  |  .  | RALT/ESC |
             //                     | GAL | NUM |SPACE| RET | SYM | FN  |
             display-name = "GALLIUM";
             bindings = <
                 &kp TAB   &kp B &kp L &kp D &kp C &kp V &kp J &kp Y  &kp O     &kp U    &kp COMMA   &kp BSPC
                 &kp LCTRL &kp N &kp R &kp T &kp S &kp G &kp P &kp H  &kp A     &kp E    &kp I       &kp DEL
-                &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z &kp K &kp F  &kp SQT   &kp SEMI &kp DOT     &kp ESC
+                &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z &kp K &kp F  &kp SQT   &kp SEMI &kp DOT     &mt RALT ESC
                                 &to 0 &mo 3 &kp SPACE &kp RET &mo 4  &mo 2
             >;
         };
@@ -42,10 +51,10 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LALT | SPC | RET | RALT  | to 3 |
             bindings = <
-                &trans &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I     &kp O   &kp P  &trans
-                &trans &kp A &kp S &kp D &kp F &kp G &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
-                &trans &kp Z &kp X &kp C &kp V &kp B &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &trans
-                                 &kp LGUI &kp LALT &kp SPACE &kp RET &kp RALT &trans
+                &trans &kp Q &kp W &kp E  &kp R    &kp T &kp Y &kp U   &kp I     &kp O   &kp P  &trans
+                &trans &kp A &kp S &kp D  &kp F    &kp G &kp H &kp J   &kp K     &kp L   &kp SEMI &trans
+                &trans &kp Z &kp X &kp C  &kp V    &kp B &kp N &kp M   &kp COMMA &kp DOT &kp FSLH &trans
+                                   &trans &kp LALT &kp SPACE   &kp RET &kp RGUI &trans
             >;
         };
 
