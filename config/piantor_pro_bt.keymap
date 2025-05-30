@@ -51,22 +51,6 @@
             >;
         };
 
-                layer_3 {
-                    // -----------------------------------------------------------------------------------------
-                    // |      |     |     |     |     |      |      |       |       |     |     |           |
-                    // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
-                    // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
-                    //                    |     |     |      |      |       |       |
-                    display-name = "FN";
-                    bindings = <
-                        &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &trans
-                        &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
-                        &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &to 4
-                                             &trans &trans   &trans   &trans    &trans    &trans
-                    >;
-                };
-
-
 
         layer_2 {
             // -----------------------------------------------------------------------------------------
@@ -84,7 +68,20 @@
         };
 
 
-
+        layer_3 {
+            // -----------------------------------------------------------------------------------------
+            // |      |     |     |     |     |      |      |       |       |     |     |           |
+            // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
+            // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
+            //                    |     |     |      |      |       |       |
+            display-name = "FN";
+            bindings = <
+                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &trans
+                &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
+                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &to 4
+                                     &trans &trans   &trans   &trans    &trans    &trans
+            >;
+        };
 
         layer_4 {
             display-name = "QWERTY";
