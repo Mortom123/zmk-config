@@ -42,7 +42,7 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LALT | SPC | RET | RALT  | to 3 |
             bindings = <
-                &trans   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I     &kp O   &kp P  &trans
+                &trans &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I     &kp O   &kp P  &trans
                 &trans &kp A &kp S &kp D &kp F &kp G &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
                 &trans &kp Z &kp X &kp C &kp V &kp B &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &trans
                                  &kp LGUI &kp LALT &kp SPACE &kp RET &kp RALT &trans
@@ -51,30 +51,32 @@
 
         layer_2 {
                 // -----------------------------------------------------------------------------------------
-                // |      |     |     |      |     |      |      |       |       |     |     |           |
-                // |      |     |     | PRNT | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
-                // |      |     |     |      |     |      |      |       |       |     |     | QWERTY    |
-                //                    |      |     |      |      |       |       |
+                // |      |         |        |      |      | GALLIUM | QWERTY |       |       |     |     |    |
+                // |      |         |        | PRNT | LALT | LGUI    | HOME   | PG_DN | PG_UP | END | INS |    |
+                // |      |         |        |      |      |         |        |       |       |     |     |    |
+                //                           |      |      |         |        |       |       |
                 display-name = "FN";
                 bindings = <
-                    &trans &trans &trans &trans          &trans   &trans    &trans     &trans    &trans    &trans  &trans  &trans
+                    &trans &trans &trans &trans          &trans   &to 0     &to 1      &trans    &trans    &trans  &trans &trans
                     &trans &trans &trans &kp PRINTSCREEN &kp LALT &kp LGUI  &kp HOME   &kp PG_DN &kp PG_UP &kp END &kp INS &trans
-                    &trans &trans &trans &trans          &trans   &trans    &trans     &trans    &trans    &trans  &trans  &to 1
+                    &trans &trans &trans &trans          &trans   &trans    &trans     &trans    &trans    &trans  &trans &trans
                                          &trans          &trans   &trans    &trans     &trans
                 >;
-            };
+
+
+pppp     bbbababbab1112234543240066777899c
 
         layer_3 {
             // -----------------------------------------------------------------------------------------
             // |      |  1  |  2  |  3  |  4  |  5    |  6  |  7  |  8  |  9  |  0  |      |
-            // |      | BT1 | BT2 | BT3 | BT4 | BT5   | LFT | DWN |  UP | RGT |     |      |
+            // |      | BT1 | BT2 | BT3 | BT4 | BT5   |     | LFT | DWN |  UP | RGT |      |
             // |      | BTCR|     | RST | BOOT| Unlock|     |     |     |     |     |      |
             //                    |     |     |       |     |     |     |
             display-name = "NUMBER";
             bindings = <
-                &trans   &kp N1       &kp N2          &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9   &kp N0 &trans
-                &trans &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &trans &bt BT_CLR   &trans          &sys_reset   &bootloader  &studio_unlock &trans   &trans   &trans &trans    &trans &trans
+                &trans  &kp N1       &kp N2        &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9   &kp N0 &trans
+                &trans  &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
+                &trans  &bt BT_CLR   &trans        &sys_reset   &bootloader  &studio_unlock &trans   &trans   &trans &trans    &trans &trans
                                        &trans  &trans  &trans  &trans  &trans   &trans
             >;
         };
