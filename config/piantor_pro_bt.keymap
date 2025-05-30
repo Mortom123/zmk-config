@@ -30,7 +30,7 @@
                 &kp TAB   &kp B &kp L &kp D &kp C &kp V &kp J &kp Y  &kp O     &kp U    &kp COMMA   &kp BSPC
                 &kp LCTRL &kp N &kp R &kp T &kp S &kp G &kp P &kp H  &kp A     &kp E    &kp I       &kp DEL
                 &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z &kp K &kp F  &kp SQT   &kp SEMI &kp DOT     &kp ESC
-                               &to 0 &mo 1 &kp SPACE &kp RET &mo 2 &to 4
+                               &to 0 &mo 1 &kp SPACE &kp RET &mo 2 &to 3
             >;
         };
 
@@ -51,13 +51,27 @@
             >;
         };
 
+                layer_3 {
+                    // -----------------------------------------------------------------------------------------
+                    // |      |     |     |     |     |      |      |       |       |     |     |           |
+                    // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
+                    // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
+                    //                    |     |     |      |      |       |       |
+                    display-name = "FN";
+                    bindings = <
+                        &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &trans
+                        &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
+                        &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &to 4
+                                             &trans &trans   &trans   &trans    &trans    &trans
+                    >;
+                };
+
 
 
         layer_2 {
             // -----------------------------------------------------------------------------------------
             // |      |  !  |  @  |  #  |  $   |  %   |  ^  |  &  |  *  |  (  |  )  |     |
             // |      |     |     |     |  '"  |  `   |  -  |  =  |  [  |  ]  |  \  |     |
-
             // |      |     |     |     |      |  ~   |  _  |  +  |  {  |  }  | "|" |     |
             //                    |     |      |      |     |     |     |
             display-name = "SYMBOL";
@@ -70,20 +84,7 @@
         };
 
 
-        layer_3 {
-            // -----------------------------------------------------------------------------------------
-            // |      |     |     |     |     |      |      |       |       |     |     |           |
-            // |      |     |     |     | LALT| LGUI | HOME | PG_DN | PG_UP | END | INS |           |
-            // |      |     |     |     |     |      |      |       |       |     |     | to 4      |
-            //                    |     |     |      |      |       |       |
-            display-name = "FN";
-            bindings = <
-                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &trans
-                &trans &trans &trans &trans &kp LALT &kp LGUI  &kp HOME  &kp PG_DN &kp PG_UP &kp END &kp INS &trans
-                &trans &trans &trans &trans &trans   &trans   &trans    &trans    &trans    &trans  &trans  &to 4
-                                     &trans &trans   &trans   &trans    &trans    &trans
-            >;
-        };
+
 
         layer_4 {
             display-name = "QWERTY";
