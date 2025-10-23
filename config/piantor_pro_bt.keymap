@@ -106,3 +106,36 @@
 
     };
 };
+
+
+//        layer_0 {
+//            // -------------------------------------------------------------------------------------------------
+//            // |      |       |       |       |       |       |       |       |       |      |       |      |
+//            // |      |       |       |       |       |       |       |       |       |      |       |      |
+//            // |      |       |       |       |       |       |       |       |       |      |       |      |
+//            //                        |       |       |       |       |       |       |
+//            display-name = "FN";
+//            bindings = <
+//                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+//                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+//                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+//                                     &trans &trans &trans &trans &trans
+//            >;
+//        };
+
+
+
+//        layer_0 {
+//            // -----------------------------------------------------------------------------------------
+//            // |  TAB  |  B  |  L  |  D  |  C  |  V  |  J  |  Y  |  O  |  U  |  ,  | BSPC     |
+//            // | LCTRL |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL      |
+//            // | LSHFT |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  '  |  ;  |  .  | RALT/ESC |
+//            //                     | GAL | NUM |SPACE| RET | SYM | FN  |
+//            display-name = "GALLIUM";
+//            bindings = <
+//                &kp TAB   &kp B &kp L &kp D &kp C &kp V &kp J &kp Y  &kp O     &kp U    &kp COMMA   &kp BSPC
+//                &kp LCTRL &kp N &kp R &kp T &kp S &kp G &kp P &kp H  &kp A     &kp E    &kp I       &kp DEL
+//                &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z &kp K &kp F  &kp SQT   &kp SEMI &kp DOT     &mt RALT ESC
+//                                &to 0 &mo 3 &kp SPACE &kp RET &mo 4  &mo 2
+//            >;
+//        };
