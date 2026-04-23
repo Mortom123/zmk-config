@@ -34,38 +34,38 @@
         compatible = "zmk,keymap";
 
         layer_0 {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB  |  B  |  L  |  D  |  C  |  V  |  J  |  Y  |  O  |  U  |  ,  | BSPC     |
-            // | LSHFT |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL      |
-            // | LCTRL |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  '  |  ;  |  .  | RALT/ESC |
-            //                     | GAL | NUM |SPACE| RET | SYM | FN  |
-            display-name = "GALLIUM";
+            // --------------------------------------------------------------------------------
+            // |  TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U   |  I  |  O  |  ,  | BSPC     |
+            // | LSHFT |  A  |  S  |  D  |  F  |  G  |  H  |  J   |  K  |  L  |  P  | DEL      |
+            // | LCTRL |  Z  |  X  |  C  |  V  |  B  |  N  |  M   |  '  |  ;  |  .  | RALT/ESC |
+            //                     | MOUSE | NUM |SPACE| RET | SYM  | FN  |
+            display-name = "QWERTY";
             bindings = <
-                &kp TAB   &kp B &kp L &kp D &kp C &kp V     &kp J   &kp Y &kp O   &kp U    &kp COMMA &kp BSPC
-                &kp LSHFT &kp N &kp R &kp T &kp S &kp G     &kp P   &kp H &kp A   &kp E    &kp I     &kp DEL
-                &kp LCTRL &kp X &kp Q &kp M &kp W &kp Z     &kp K   &kp F &kp SQT &kp SEMI &kp DOT   &mt RALT ESC
-                                      &mo 5 &mo 3 &kp SPACE &kp RET &mo 4 &mo 2
+                &kp TAB    &kp Q &kp W &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I   &kp O    &kp COMMA &kp BSPC
+                &kp LSHFT  &kp A &kp S &kp D  &kp F  &kp G  &kp H  &kp J  &kp K   &kp L    &kp P     &kp DEL
+                &kp LCTRL  &kp Z &kp X &kp C  &kp V  &kp B  &kp N  &kp M  &kp SQT &kp SEMI &kp DOT   &mt RALT ESC
+                                       &mo 5  &mo 3 &kp SPACE &kp RET &mo 4 &mo 2
             >;
         };
 
         layer_1 {
-            // --------------------------------------------------------------------------------
-            // |      |  Q  |  W  |  E  |  R  |  T  |  Y  |  U   |  I  |  O  |  ,  |    |
-            // |      |  A  |  S  |  D  |  F  |  G  |  H  |  J   |  K  |  L  |  P  |    |
-            // |      |  Z  |  X  |  C  |  V  |  B  |  N  |  M   |  '  |  ;  |  .  |    |
-            //                    |     |     |     |     |      |     |
-            display-name = "QWERTY";
+            // -------------------------------------------------------------------------------------------------
+            // |      |       |       |       |       |       |       |       |       |      |       |      |
+            // |      |       |       |       |       |       |       |       |       |      |       |      |
+            // |      |       |       |       |       |       |       |       |       |      |       |      |
+            //                        |       |       |       |       |       |       |
+            display-name = "Empty";
             bindings = <
-                &trans &kp Q &kp W &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I   &kp O    &kp COMMA &trans
-                &trans &kp A &kp S &kp D  &kp F  &kp G  &kp H  &kp J  &kp K   &kp L    &kp P     &trans
-                &trans &kp Z &kp X &kp C  &kp V  &kp B  &kp N  &kp M  &kp SQT &kp SEMI &kp DOT   &trans
-                                   &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                                     &trans &trans &trans &trans &trans
             >;
         };
 
         layer_2 {
             // -----------------------------------------------------------------------------------------
-            // |      |         |        |      |       | GALLIUM | QWERTY |      |       |        |     |     |
+            // |      |         |        |      |       | TO0     | TO1    |      |       |        |     |     |
             // |      |         |  INS   | PRNT | LALT  | LGUI    |        | POS1 | PG_DN | PG_UP  | END |     |
             // |      |  BT0    |  BT2   | BT3  |  BT4  | BT5     |  BTCR  | RST  | BOOT  | Unlock |     |     |
             //                           |      |       |         |        |      |       |
@@ -127,6 +127,7 @@
 };
 
 
+// TRANS
 //        layer_0 {
 //            // -------------------------------------------------------------------------------------------------
 //            // |      |       |       |       |       |       |       |       |       |      |       |      |
@@ -143,18 +144,19 @@
 //        };
 
 
-
+// GALLIUM
 //        layer_0 {
 //            // -----------------------------------------------------------------------------------------
 //            // |  TAB  |  B  |  L  |  D  |  C  |  V  |  J  |  Y  |  O  |  U  |  ,  | BSPC     |
-//            // | LCTRL |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL      |
-//            // | LSHFT |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  '  |  ;  |  .  | RALT/ESC |
+//            // | LSHFT |  N  |  R  |  T  |  S  |  G  |  P  |  H  |  A  |  E  |  I  | DEL      |
+//            // | LCTRL |  X  |  Q  |  M  |  W  |  Z  |  K  |  F  |  '  |  ;  |  .  | RALT/ESC |
 //            //                     | GAL | NUM |SPACE| RET | SYM | FN  |
 //            display-name = "GALLIUM";
 //            bindings = <
-//                &kp TAB   &kp B &kp L &kp D &kp C &kp V &kp J &kp Y  &kp O     &kp U    &kp COMMA   &kp BSPC
-//                &kp LCTRL &kp N &kp R &kp T &kp S &kp G &kp P &kp H  &kp A     &kp E    &kp I       &kp DEL
-//                &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z &kp K &kp F  &kp SQT   &kp SEMI &kp DOT     &mt RALT ESC
-//                                &to 0 &mo 3 &kp SPACE &kp RET &mo 4  &mo 2
+//                &kp TAB   &kp B &kp L &kp D &kp C &kp V     &kp J   &kp Y &kp O   &kp U    &kp COMMA &kp BSPC
+//                &kp LSHFT &kp N &kp R &kp T &kp S &kp G     &kp P   &kp H &kp A   &kp E    &kp I     &kp DEL
+//                &kp LCTRL &kp X &kp Q &kp M &kp W &kp Z     &kp K   &kp F &kp SQT &kp SEMI &kp DOT   &mt RALT ESC
+//                                      &mo 5 &mo 3 &kp SPACE &kp RET &mo 4 &mo 2
 //            >;
 //        };
+
